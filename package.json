@@ -1,0 +1,30 @@
+{
+  "name": "immutable-light",
+  "version": "0.1.0",
+  "description": "Light-weight immutability helper functions",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "jest": "jest",
+    "lint": "eslint .",
+    "test": "npm run lint && npm run jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricsv/immutable-light.git"
+  },
+  "author": "Rickard Svensson <svensson.rt@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ricsv/immutable-light/issues"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^18.1.0"
+  }
+}
