@@ -2,7 +2,7 @@
   "name": "immutable-light",
   "version": "0.1.0",
   "description": "Light-weight immutability helper functions",
-  "main": "lib/index.js",
+  "main": "lib/immutable.js",
   "scripts": {
     "build": "babel src --out-dir lib",
     "jest": "jest",
@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/ricsv/immutable-light.git"
   },
+  "files": [
+    "/lib"
+  ],
   "author": "Rickard Svensson <svensson.rt@gmail.com>",
   "license": "MIT",
   "bugs": {
