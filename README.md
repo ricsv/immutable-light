@@ -7,12 +7,12 @@ Light-weight immutability helpers that works great together with Redux.
 
 ## Motivation
 
-The API of this library is heavily inspired by [Immutable JS](https://github.com/facebook/immutable-js), which is a great library to enforce immutability in your Javascript code. 
+The API of this library is inspired by [Immutable JS](https://github.com/facebook/immutable-js), which is a great library to enforce immutability in your Javascript code. 
 
 Immutable-light provides a set of helper functions that will return new references for you where you'll need them. Example:
 
 ```js
-import { shiftIn } from 'immutable';
+import { shiftIn } from 'immutable-light';
 
 const obj = {
   inner: {
@@ -32,7 +32,7 @@ console.log(obj.inner2 === newObj.inner2); // true
 
 This means the library will keep references where it can, so keep in mind to not manipulate values in returned objects (someting that should be avoided nonetheless if using the library within a Redux reducer).
 
-It's recommended to use the library togehter with the vital [no-param-reassign](http://eslint.org/docs/rules/no-param-reassign) ESLint rule.
+It's recommended to use the library togehter with the [no-param-reassign](http://eslint.org/docs/rules/no-param-reassign) ESLint rule.
 
 ## Usage
 
