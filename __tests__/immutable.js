@@ -167,7 +167,7 @@ describe('splice function', () => {
     const newArr = splice(arr, 0, 1, 2);
 
     expect(arr).toEqual([0, 1]);
-    expect(newArr).toEqual([0, 2]);
+    expect(newArr).toEqual([2, 1]);
   });
 });
 

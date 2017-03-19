@@ -104,8 +104,8 @@ function shiftIn(obj, refs) {
 }
 
 function splice(arr, idx, count, ...items) {
-  const newArr = arr.slice(0).splice(idx, count, ...items);
-  items.forEach(item => newArr.push(item));
+  const newArr = arr.slice(0);
+  newArr.splice(idx, count, ...items);
   return newArr;
 }
 
