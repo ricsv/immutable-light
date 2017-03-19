@@ -1,19 +1,22 @@
 # API Reference
 
-- Basic functions
+- [Basic functions](#basic-functions)
   - [set](#setobj-ref-item)
   - [setIn](#setinobj-refs-item)
-  - [getIn](#getinobj-refs)
   - [merge](#mergeobj-items)
   - [mergeIn](#mergeinobj-refs-items)
-- Array functions
-  - [push](#pushobj-ref-item)
+- [Array functions](#array-functions)
+  - [push](#pusharr-ref-item)
   - [pushIn](#pushinobj-refs-item)
-  - [shift](#shiftobj-ref)
+  - [shift](#shiftarr-ref)
   - [shiftIn](#shiftinobj-refs)
-  - [splice](#spliceobj-ref-idx-count-items)
+  - [splice](#splicearr-ref-idx-count-items)
   - [spliceIn](#spliceinobj-refs-idx-count-items)
-- Advanced functions
+- [Utility functions](#utility-functions)
+  - [getIn](#getinobj-refs)
+  - [has](#hasobj-ref)
+  - [hasIn](#hasinobj-refs)
+- [Advanced functions](#advanced-functions)
   - [ref](#refitem)
   - [refsTo](#refstoobj-refs)
 
@@ -55,25 +58,6 @@ const obj = {
 };
 const newObj = set(obj, 'inner.a', 2);
 console.log(newObj); // { inner: { a: 2, b: 2 } }
-```
-
-### `getIn(obj, refs)`
-
-- `obj` Object. The object to copy and assign to.
-- `refs` Array | String. References to the object to copy and assign to.
-- `items` Object(s) to assign.
-
-Utility function to get a value within a structure. Returns a non-copied value from the original structure.
-
-```js
-import { getIn } from 'immutable-light';
-const obj = {
-  inner: {
-    arr: [{ a: 0 }]
-  }
-};
-const firstArrayObj = getIn(obj, ['inner', 'arr', 0]);
-console.log(firstArrayObj); // { a: 0 }
 ```
 
 ### `merge(obj, ...items)`
@@ -210,6 +194,65 @@ const obj: {
 };
 const newArr = spliceIn(obj, 'arr', 0, 1, 2);
 console.log(newArr); // { arr: [2, 1] }
+```
+
+## Utility functions
+
+### `has(obj, ref)`
+
+- `obj` Object. The object to check.
+- `ref` String. Name of the property.
+
+Check if a property exists within an object.
+
+```js
+import { has } from 'immutable-light';
+const obj = {
+  a: 1,
+  b: undefined
+};
+console.log(has(obj, 'a')); // true
+console.log(has(obj, 'b')); // true
+console.log(has(obj, 'c')); // false
+```
+
+### `hasIn(obj, refs)`
+
+- `obj` Object. The JSON structure to operate on.
+- `refs` Array | String. References to the property to check for existence.
+
+Check if a property exists within a nested structure.
+
+```js
+import { hasIn } from 'immutable-light';
+const obj = {
+  inner: {
+    a: 1,
+    b: undefined
+  }
+};
+console.log(hasIn(obj, 'inner.a')); // true
+console.log(hasIn(obj, 'inner.b')); // true
+console.log(hasIn(obj, 'inner.c')); // false
+```
+
+### `getIn(obj, refs)`
+
+- `obj` Object. The object to copy and assign to.
+- `refs` Array | String. References to the object to copy and assign to.
+- `items` Object(s) to assign.
+
+Utility function to get a value within a structure. Returns a non-copied value from the original structure.
+
+```js
+import { getIn } from 'immutable-light';
+const obj = {
+  inner: {
+    arr: [{ a: 0 }]
+  }
+};
+const firstArrayObj = getIn(obj, ['inner', 'arr', 0]);
+console.log(firstArrayObj); // { a: 0 }
 ```
 
 
