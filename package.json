@@ -31,7 +31,7 @@
     "jest": "^18.1.0"
   },
   "jest": {
-    "collectCoverageFrom" : ["src/**/*.js}", "!**/node_modules"],
+    "collectCoverageFrom" : ["src/**/*.js", "!**/node_modules"],
     "coveragePathIgnorePatterns": [
       "<rootDir>/dist/",
       "<rootDir>/node_modules/"
