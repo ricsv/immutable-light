@@ -7,7 +7,7 @@
     "build": "babel src --out-dir lib",
     "jest": "jest",
     "lint": "eslint .",
-    "test": "npm run lint && npm run jest"
+    "test": "npm run lint && npm run jest -- --coverage"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,12 @@
     "eslint-config-airbnb-base": "^11.1.0",
     "eslint-plugin-import": "^2.2.0",
     "jest": "^18.1.0"
+  },
+  "jest": {
+    "collectCoverageFrom" : ["src/**/*.js}", "!**/node_modules"],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/dist/",
+      "<rootDir>/node_modules/"
+    ]
   }
 }
