@@ -4,6 +4,8 @@ Light-weight immutability helpers that works great together with Redux.
 
 [![Build Status](https://travis-ci.org/ricsv/immutable-light.svg?branch=master)](https://travis-ci.org/ricsv/immutable-light)
 [![npm](https://badge.fury.io/js/immutable-light.svg?branch=master)](http://badge.fury.io/js/immutable-light)
+[![Coverage Status](https://coveralls.io/repos/github/ricsv/immutable-light/badge.svg?branch=master)](https://coveralls.io/github/ricsv/immutable-light?branch=master)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
 ## Motivation
 
