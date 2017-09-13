@@ -290,9 +290,12 @@ console.log(obj.inner.c === newObj.inner.c); // false
 console.log(obj.inner.d === newObj.inner.d); // true
 ```
 
-## Types of references
+## Refs
 
-Array and `.` separated strings are accepted as refs
+There are two types of refs that can be used in methods.
+
+- Array refs of the form: `['my','nested','object']`
+- String refs of the form: `'my.nested.object'`
 
 ```js
 import { setIn } from 'immutable-light';
@@ -317,13 +320,5 @@ const nextObject3 = setIn(myObject, 'inner.arr.0.x', 4); // <=>
 const nextObject4 = setIn(myObject, ['inner', 'arr', 0, 'a'], 4);
 ```
 
-
-## References
-
-There are two types of references that can be used in methods.
-
-- Array references of the form: `['my','nested','object']`
-- String references of the form: `'my.nested.object'`
-
-If using the string reference form together with template strings (example: ``my.${dynProp}.xyz``),
-bear in mind that variables containing the `.` character might result in unexpected references.
+If using the string ref form together with template strings (example: ``my.${dynProp}.xyz``),
+keep in mind that variables containing the `.` character might result in unexpected references.
